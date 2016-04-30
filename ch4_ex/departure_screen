@@ -1,0 +1,4 @@
+Feature: Departure Screens
+
+Scenario: Displaying Flight Codes of Departing Flights
+	Given /(the|a) flight ([A-Z0-9]*) is leaving today/

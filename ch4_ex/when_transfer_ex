@@ -1,0 +1,3 @@
+#When I transfer $500 from my Savings Account into my Checking Account.
+
+When /I transfer \$(\d+) from my (\w+) Account into my (\w+) Account./
