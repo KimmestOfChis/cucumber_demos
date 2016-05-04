@@ -1,17 +1,20 @@
 require 'capybara/cucumber'
+require'selenium-webdriver'
+
+driver = Selenium::WebDriver.for :firefox
 
 Capybara.default_driver = :selenium
 
-page = 'http://www.trektoday.com'
-
 Given(/^that I am on the TrekToday Homepage$/) do
-  visit(page)
+	driver.navigate.to 'http://www.trektoday.com'
+	driver.manage.window.maximize
 end
 
 When(/^I click on "([^"]*)"$/) do |link|
-click_link(#needs figuring out)
+driver.find_element(:id, 'menu-item-41291').click
 end
 
 Then(/^I should be on the CSI Files site$/) do
-  page.should have_content("T'Bonz")
+  driver.find_element(:id, 'menu-item-63473').displayed?
+  driver.quit
 end
