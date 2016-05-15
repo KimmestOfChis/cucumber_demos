@@ -15,12 +15,5 @@ When(/^I click the "([^"]*)" Button$/) do |link|
 end
 
 Then(/^I will see electronic prior authorization report$/) do
-  page.has_content?('This report summarizes the current state 
-  	of the electronic prior authorization (ePA) industry. 
-  	The intent is to quantify current ePA adoption rates, 
-  	highlight implementation status by market share leaders, 
-  	and outline the keys to success for ePA in the industry.')
+  page.has_content('Matt Johnson is great.')
 end
-
-
-
