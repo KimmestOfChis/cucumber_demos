@@ -6,10 +6,8 @@ end
 
 Capybara.default_driver = :selenium
 
-capyDrive= Capybara.current_session.driver.browser
+capyDrive = Capybara.current_session.driver.browser
 window = Capybara.current_session.driver.browser.manage.window
-textCheck = Capybara.current_session.driver.browser
-
 wait = Selenium::WebDriver::Wait.new ignore: Selenium::WebDriver::Error::NoAlertPresentError
 
 Given(/^that I'm on Dan's Site$/) do
@@ -27,5 +25,5 @@ end
 
 Then(/^I should get a file size returned$/) do
 	wait.until { page.driver.browser.switch_to.alert }
-	expect(textCheck.switch_to.alert.text[0,9]).to eq "File size"
+	expect(capyDrive.switch_to.alert.text[0,9]).to eq "File size"
 end
