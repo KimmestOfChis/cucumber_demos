@@ -1,13 +1,13 @@
 require 'capybara/cucumber'
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
+#Capybara.register_driver :selenium do |app|
+#  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+#end
 
 Capybara.default_driver = :selenium
 
 capyDrive = Capybara.current_session.driver.browser
-window = Capybara.current_session.driver.browser.manage.window
+window = capyDrive.manage.window
 wait = Selenium::WebDriver::Wait.new ignore: Selenium::WebDriver::Error::NoAlertPresentError
 
 Given(/^that I'm on Dan's Site$/) do
