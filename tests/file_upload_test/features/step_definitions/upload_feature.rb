@@ -24,6 +24,6 @@ When(/^click "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should get a file size returned$/) do
-	wait.until { page.driver.browser.switch_to.alert }
+	wait.until { page.driver.browser.switch_to.alert } #ensures that script waits until the popup opens to switch to popup
 	expect(capyDrive.switch_to.alert.text[0,9]).to eq "File size"
 end

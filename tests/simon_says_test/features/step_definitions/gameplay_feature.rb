@@ -12,13 +12,5 @@ When(/^I press "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see a button light$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When(/^I press that button$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^the next level should start$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_element? "blue hoverable"
 end

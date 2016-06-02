@@ -5,5 +5,3 @@ Scenario: Pressing the right buttons
 	Given that I am on the Simon game page
 	When I press "start"
 	Then I should see a button light
-	When I press that button 
-	Then the next level should start
